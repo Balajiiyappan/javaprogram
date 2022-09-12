@@ -1,17 +1,23 @@
-import java.util.Scanner;
-class Main{
-    public static void main(String[] args){
-        
-        Scanner sc=new Scanner(System.in);
-        System.out.print("Enter a user name:");
-        String a=sc.nextLine();
-        System.out.print("Reenter a user name:");
-        String b=sc.nextLine();
-        if (a==b){
-            System.out.print("User name is valid");
-        }
-        else {
-            System.out.print("User name is invalid");
-        }
-    }
+import java.util.*;
+public class Main{ 
+public static void main(String args[])
+{ 
+ String s1,s2; 
+ boolean result;
+ Scanner s= new Scanner(System.in);
+ System.out.print("enter the usernmae :");
+ s1=s.nextLine();
+ System.out.print("Reenter the username :");
+ s2=s.nextLine();
+ 
+ result=s1.equals(s2);
+ if (result==false)
+ {
+ System.out.println("User name is Invalid");
+ }
+ else
+ {
+ System.out.println("User name is valid");
+ }
+}
 }
