@@ -1,24 +1,23 @@
 import java.util.*;
-
-class Program
-{
-  public static void main(String args[])
-  {
-      int table,times,i,result;
-      Scanner sc=new Scanner(System.in);
-
-     System.out.println("Enter The Table:");
-     table=sc.nextInt();
-
-      System.out.println("Enter The Times:");
-      times=sc.nextInt();
-
-      System.out.println("The Output Is:");
-      for(i=1;i<=times;i++)
+class Main{
+    public static void main(String[] args)
+    {
+        int a,b,i;
+        Scanner sc = new Scanner(System.in);
+      System.out.println("Enter nummber ::");
+      a= sc.nextInt();
+      System.out.println("Enter number of times to be multiplied ::");
+      b= sc.nextInt();
+      if(a>0 &&b>0)
       {
-            result=table*i;
-            System.out.println(table +"*" +i +"=" +result);
-     }
-
-  }
+          for(i=1;i<=b;i++)
+          {
+               System.out.println(a +"*" +i +"=" +a*i);
+          }
+      }
+      else
+      {
+          System.out.println("enter valid details");
+      }
+    }
 }
