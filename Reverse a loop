@@ -1,19 +1,27 @@
-import java.util.Scanner;
-import java.util.InputMismatchException;
-public class Main 
-{  
-public static void main(String[] args)   
-{  
-int number, reverse = 0; 
-    Scanner scanner = new Scanner(System.in);
- try { System.out.print("Enter number to be reversed ");
-    number=scanner.nextInt();
-    while(number!=0)
-    { int remainder = number % 10;  
-     reverse = reverse * 10 + remainder;  
-     number = number/10; }
-    System.out.println("The reverse of the given number is: " + reverse); }
-    catch (InputMismatchException e){
-    System.out.println(e.getMessage());
-}  
-}}
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    String str,rev="";
+	    int i,ln;
+	    Scanner sc=new Scanner(System.in);
+		System.out.print("Enter word: ");
+		str=sc.nextLine();
+		for (i=0;i<str.length(); i++)
+        {
+            char c = str.charAt(i);
+            if (!(c>='A' && c<='Z') && !(c>='a' && c<='z') && !(c==' ')) 
+            {
+                System.out.println("Invalid");
+                return;
+            }
+        }
+        ln=str.length();
+	    for(i=ln-1;i>=0;i--)
+	    {
+	        rev=rev+str.charAt(i);
+	    }
+	    System.out.print("Reverse: "+rev);
+    }
+}
