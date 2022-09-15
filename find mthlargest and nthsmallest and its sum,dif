@@ -1,29 +1,58 @@
 import java.util.*;
-public class Main {
- public static void main(String[] args) {
- Scanner input = new Scanner(System.in);
- System.out.print("enter the size of the array:- ");
- int size = input.nextInt();
- int[] arr = new int[size];
- System.out.println("enter the values in the array:- ");
- for(int i=0;i<size;i++){
- arr[i] = input.nextInt();
- }
- Arrays.sort(arr);
- System.out.print("enter the Mth max number:- ");
- int m = input.nextInt();
- System.out.print("enter the Nth min number:- ");
- int n = input.nextInt();
- int max=0,min=0;
- if(m==0)
- System.out.println("please enter the valid input");
- else{
- max = arr[arr.length-m];
- min = arr[n-1];
- System.out.println("the max is "+max);
- System.out.println("the min is "+min);
- System.out.println("the sum is: "+(max+min));
- System.out.println("the min is: "+(max-min));
- }
- }
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    int x,i,j,m,n,desc,asce,max,min,diff,sum;
+	    Scanner sc=new Scanner(System.in);
+		System.out.print("Enter no. of elements: ");
+		x=sc.nextInt();
+		int a[]=new int[x];
+		System.out.println("Enter elements: ");
+		for(i=0;i<x;i++)
+		{
+		    a[i]=sc.nextInt();
+		}
+		System.out.print("M: ");
+		m=sc.nextInt();
+		System.out.print("N: ");
+		n=sc.nextInt();
+		if(m>x || n>x || m==0 || n==0)
+		{
+		    System.out.println("Invalid M,N");
+		    return;
+		}
+		for(i=0;i<x;i++)
+		{
+		    for(j=i+1;j<x;++j)
+		    {
+		        if(a[i]<a[j])
+		        {
+		            desc=a[i];
+		            a[i]=a[j];
+		            a[j]=desc;
+		        }
+		    }
+		}
+		max=a[m-1];
+		System.out.println(m+" Maximum no. is: "+max);
+		for(i=0;i<x;i++)
+		{
+		    for(j=i+1;j<x;++j)
+		    {
+		        if(a[i]>a[j])
+		        {
+		            asce=a[i];
+		            a[i]=a[j];
+		            a[j]=asce;
+		        }
+		    }
+		}
+		min=a[n-1];
+		sum=max+min;
+		diff=max-min;
+		System.out.println(n+" Minimum no. is: "+min);
+		System.out.println("Sum= "+sum);
+		System.out.println("Difference= "+diff);
+	}
 }
